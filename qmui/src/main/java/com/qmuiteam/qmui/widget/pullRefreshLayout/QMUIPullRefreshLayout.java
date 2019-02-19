@@ -18,17 +18,17 @@ package com.qmuiteam.qmui.widget.pullRefreshLayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.NestedScrollingParent;
-import android.support.v4.view.NestedScrollingParentHelper;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.CircularProgressDrawable;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.MotionEventCompat;
+import androidx.core.view.NestedScrollingParent;
+import androidx.core.view.NestedScrollingParentHelper;
+import androidx.core.view.ViewCompat;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -866,10 +866,8 @@ public class QMUIPullRefreshLayout extends ViewGroup implements NestedScrollingP
                 deliverVelocity();
                 mScroller.forceFinished(true);
             }
-            Log.i("cgine", "2===========");
             invalidate();
         } else if (hasFlag(FLAG_NEED_SCROLL_TO_INIT_POSITION)) {
-            Log.i("cgine", "1===========");
             removeFlag(FLAG_NEED_SCROLL_TO_INIT_POSITION);
             if (mTargetCurrentOffset != mTargetInitOffset) {
                 mScroller.startScroll(0, mTargetCurrentOffset, 0, mTargetInitOffset - mTargetCurrentOffset);

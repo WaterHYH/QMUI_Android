@@ -18,9 +18,9 @@ package com.qmuiteam.qmui.arch;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import android.util.Log;
 import android.widget.FrameLayout;
 
@@ -125,6 +125,16 @@ public abstract class QMUIFragmentActivity extends InnerBaseActivity {
                     e.printStackTrace();
                 }
                 return false;
+            }
+
+            @Override
+            public boolean needReNameTag() {
+                return true;
+            }
+
+            @Override
+            public String newTagName() {
+                return fragment.getClass().getSimpleName();
             }
         });
         return index;
